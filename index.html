@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Gestor de Campers</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">Gestor de Campers</h1>
+
+        <!-- Contenedor de Agregar Camper y Buscar Camper -->
+        <div class="row">
+            <!-- Buscar Camper -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Buscar Camper</h2>
+                        <div class="form-group">
+                            <input type="text" id="searchInput" class="form-control"
+                                placeholder="Buscar por nombre o identificación">
+                        </div>
+                        <button type="button" id="searchButton" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agregar Camper -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Agregar Camper</h2>
+                        <form id="camperForm">
+                            <div class="form-group">
+                                <label for="identificacion">Número de identificación:</label>
+                                <input type="text" id="identificacion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo:</label>
+                                <input type="text" id="nombre" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono Celular:</label>
+                                <input type="number" id="telefono" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico:</label>
+                                <input type="email" id="correo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="grupo">Grupo Campus:</label>
+                                <input type="text" id="grupo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="campcoins">Campcoins Acumulados:</label>
+                                <input type="number" id="campcoins" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-success">Registrar Camper</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de Campers Registrados -->
+        <div class="row my-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Campers Registrados</h2>
+                        <div id="camperList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aplicar Conceptos a Campers -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Aplicar Conceptos a Campers</h2>
+                        <form id="conceptForm">
+                            <div class="form-group">
+                                <label for="concepto">Concepto:</label>
+                                <select id="concepto" class="form-control" required>
+                                    <!-- Opciones de conceptos -->
+                                    <option value="1">Llegar Tarde (-3 CampCoins)</option>
+                                    <option value="2">Buenas Notas (2 CampCoins)</option>
+                                    <option value="3">Compañerismo (5 CampCoins)</option>
+                                    <option value="4">Decir Groserías (-10 CampCoins)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="camper">Camper:</label>
+                                <select id="camper" class="form-control" required>
+                                    <!-- Opciones de campers (se llenarán con respecto se vayan agregando campers) -->
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Aplicar Concepto</button>
+                        </form>
+                        <ul id="conceptosAplicados">
+                            <!-- La lista de conceptos aplicados se llenará dinámicamente con JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
